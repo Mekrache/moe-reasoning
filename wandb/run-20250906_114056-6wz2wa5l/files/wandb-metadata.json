@@ -1,0 +1,36 @@
+{
+  "os": "Linux-6.8.0-79-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.12.2",
+  "startedAt": "2025-09-06T09:40:56.791027Z",
+  "program": "/home/arora/mekrache/moe-reasoning/notebooks/moe-sft-training.ipynb",
+  "codePath": "moe-sft-training.ipynb",
+  "codePathLocal": "moe-sft-training.ipynb",
+  "email": "fa_mekrache@esi.dz",
+  "root": "..",
+  "host": "saumon.sboai.cs.eurecom.fr",
+  "executable": "/home/arora/mekrache/moe-reasoning/.env/bin/python",
+  "cpu_count": 12,
+  "cpu_count_logical": 20,
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "500372127744",
+      "used": "361400446976"
+    }
+  },
+  "memory": {
+    "total": "67177963520"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 3060",
+      "memoryTotal": "12884901888",
+      "cudaCores": 3584,
+      "architecture": "Ampere",
+      "uuid": "GPU-31b17d8b-2b1e-78ac-472c-d627e263d4a1"
+    }
+  ],
+  "cudaVersion": "12.9",
+  "writerId": "7syf04np6i0r66dq0mpbs1s81w5lvtn4"
+}
