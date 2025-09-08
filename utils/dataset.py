@@ -135,9 +135,8 @@ def parse_golden(text):
 def compute_rewards(responses, solutions):
     rewards = []
     for response, solution in zip(responses, solutions):
-        pred_text = "<think>" + response
 
-        pred_reasoning, pred_answer = parse_answer(pred_text)
+        pred_reasoning, pred_answer = parse_answer(response)
         gold_reasoning, gold_answer = parse_answer(solution)
 
         # 1) Correctness of final answer

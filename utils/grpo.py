@@ -73,7 +73,9 @@ def collect_experiences(llm, tokenizer, accelerator, batch, batch_size, num_roll
             assistant_responses,
             skip_special_tokens=True
             ) 
-        
+
+        decoded_responses = [f"<think>{resp}" for resp in decoded_responses]
+                
         rewards = compute_rewards(decoded_responses, np.repeat(solution, num_rollouts))
 
         rewards = np.reshape(rewards, [batch_size, num_rollouts])
