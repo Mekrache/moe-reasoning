@@ -39,9 +39,9 @@ Direct RL on a pretrained LLM fails on GSM8K because the model does not know the
 - **Environment**: Custom Gymnasium wrapper around GSM8K, handling prompts and response evaluation.  
 - **Reward Function**:
 
-\[
+$$
 \text{reward} = 0.7 \cdot \text{correctness} + 0.15 \cdot \text{format} + 0.15 \cdot \text{BERTScore}
-\]
+$$
 
   - **Correctness**: 1.0 if predicted answer matches gold, else 0.0  
   - **Format**: 1.0 if reasoning + answer are properly structured  
@@ -49,10 +49,10 @@ Direct RL on a pretrained LLM fails on GSM8K because the model does not know the
 
 - **GRPO Loss**: Clipped policy gradient loss (similar to PPO):
 
-\[
+$$
 \text{ratio} = \exp(\log \pi_\theta(a|s) - \log \pi_{\text{old}}(a|s)), \quad
 \text{loss} = -\min(\text{ratio} \cdot \text{advantage}, \text{clip}(\text{ratio}, 1-\epsilon, 1+\epsilon) \cdot \text{advantage})
-\]
+$$
 
 - **Expert Usage Monitoring**: Logs per-step MoE expert counts and percentages to understand routing behavior.
 
@@ -136,8 +136,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 # Load base model
 model = AutoModelForCausalLM.from_pretrained("ibm-granite/granite-3.0-1b-a400m-base", device_map="auto")
 # Load LoRA adapter
-llm = PeftModel.from_pretrained(model, "../checkpoints/granite-1b-a400m-blue-yonder-grpo")
-tokenizer = AutoTokenizer.from_pretrained("../checkpoints/granite-1b-a400m-blue-yonder-grpo", local_files_only=True)
+llm = PeftModel.from_pretrained(model, "../checkpoints/granite-1b-a400m-blue-yonder-grpo-3")
+tokenizer = AutoTokenizer.from_pretrained("../checkpoints/granite-1b-a400m-blue-yonder-grpo-3", local_files_only=True)
 
 # Inference
 prompt = "<your formatted GSM8K prompt>"
